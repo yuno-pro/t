@@ -36,18 +36,15 @@
     </div>
     
     <script>
+        const links = document.querySelectorAll('.transition-link');
         const wrapper = document.querySelector('.wrapper');
-        (function() {
-            const links = document.querySelectorAll('.transition-link');
-            links.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                const animationDuration = parseFloat(getComputedStyle(wrapper).getPropertyValue('animation-duration')) * 1000;
-                setTimeout(() => {window.location.href = link.href;}, animationDuration);
-                    setTimeout(() => {window.location.href = link.href;}, 500);
-                });
+        links.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                wrapper.classList.add('fade-out');
+                setTimeout(() => {window.location.href = link.href;}, 500);
             });
-        })();
+        });
         function togglePasswordVisibility() {
                     const passwordField = document.getElementById('password');
                     if (passwordField.type === 'password') {
