@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="assets/css/style1.css">
+</head>
+<body>
+    <div class="wrapper register-wrapper">
+        <form action="#">
+            <h2>Create an Account</h2>
+            <div class="input-field">
+                <input type="text" required>
+                <label>Enter your full name</label>
+            </div>
+            <div class="input-field">
+                <input type="email" required>
+                <label>Enter your email</label>
+            </div>
+            <div class="input-field">
+                <input type="password" required>
+                <label>Create a password</label>
+            </div>
+            <div class="input-field">
+                <input type="password" required>
+                <label>Confirm your password</label>
+            </div>
+            <button type="submit">Sign Up</button>
+            <div class="login">
+                <p>Already have an account?
+                    <a href="login.html" class="transition-link">Log In</a>
+                </p>
+            </div>
+        </form>
+    </div>
+    <script>
+        const links = document.querySelectorAll('.transition-link');
+        const wrapper = document.querySelector('.wrapper');
+        links.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                wrapper.classList.add('fade-out');
+                setTimeout(() => {window.location.href = link.href;}, 500);
+            });
+        });
+    </script>
+</body>
+</html>

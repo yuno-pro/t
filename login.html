@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="assets/css/style1.css">
+</head>
+<body>
+    <div class="wrapper">
+        <form action="#">
+            <h2>Log In</h2>
+            <div class="input-field">
+                <input type="text" required>
+                <label>Enter your email</label>
+            </div>
+            <div class="input-field">
+                <input type="password" id="password" required>
+                <label>Enter your password</label>
+                <button type="button" class="toggle-password" onclick="togglePasswordVisibility()">👁</button>
+            </div>
+            <div class="forget">
+                <label for="remember">
+                    <input type="checkbox" id="remember">
+                    <p>Remember me</p>
+                </label>
+                <a href="#">Forgot Password?</a>
+            </div>
+            <button type="submit">Log In</button>
+            <div class="register">
+                <p>Don't have an account?
+                    <a href="register.html" class="transition-link">Register</a>
+                </p>
+            </div>
+        </form>
+    </div>
+    
+    <script>
+        const wrapper = document.querySelector('.wrapper');
+        (function() {
+            const links = document.querySelectorAll('.transition-link');
+            links.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                const animationDuration = parseFloat(getComputedStyle(wrapper).getPropertyValue('animation-duration')) * 1000;
+                setTimeout(() => {window.location.href = link.href;}, animationDuration);
+                    setTimeout(() => {window.location.href = link.href;}, 500);
+                });
+            });
+        })();
+        function togglePasswordVisibility() {
+                    const passwordField = document.getElementById('password');
+                    if (passwordField.type === 'password') {
+                        passwordField.type = 'text';
+                    } else {
+                        passwordField.type = 'password';
+                    }
+                }
+    </script>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help & Support</title>
+    <link rel="icon" href="assets/img/people/4.5.png" type="image/png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        nav {
+            background: #c7c3c3;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000; 
+            box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav .logo {
+            width: 120px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #000000;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        nav ul li a:hover, nav ul li a.active {
+            color: #088178;
+            text-decoration: underline;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #000;
+            margin: 4px 0;
+        }
+
+        .nav-links {
+            display: flex;
+        }
+
+        .nav-links.active {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 50px;
+            right: 20px;
+            background: #c7c3c3;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-links.active li {
+            margin: 10px 0;
+        }
+
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+        }
+
+        main {
+            padding: 40px 60px;
+            max-width: 900px;
+            margin: 30px auto;
+            background-color: white;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        section h2 {
+            font-size: 2em;
+            color: #007bff;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 5px;
+        }
+
+        section p, section ul {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(90deg, #007bff, #0056b3);
+            color: white;
+            margin-top: 30px;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html"><img src="assets/img/logo.png" class="logo" alt="Logo"></a>
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
+            <li><a href="help.html" class="active">Help & Support</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h2>Contact Us</h2>
+            <p>If you need assistance, feel free to reach out to us:</p>
+            <ul>
+                <li>Email: <a href="mailto:support@example.com">support@example.com</a></li>
+                <li>Phone: +01 2222 365</li>
+                <li>Hours: 09:00 AM - 07:00 PM, Monday to Saturday</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Frequently Asked Questions (FAQs)</h2>
+            <div class="faq">
+                <h3>1. How can I track my order?</h3>
+                <p>You can track your order by visiting the <a href="track-order.html">Track My Order</a> page and entering your order ID.</p>
+            </div>
+            <div class="faq">
+                <h3>2. What is your return policy?</h3>
+                <p>We offer a 30-day return policy for unused and unopened items. For more details, visit our <a href="return-policy.html">Return Policy</a> page.</p>
+            </div>
+            <div class="faq">
+                <h3>3. How do I apply a coupon code?</h3>
+                <p>You can apply a coupon code during checkout in the "Apply Coupon" section.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Email Us</h2>
+            <p>If you have specific questions or need further assistance, you can email us directly at:</p>
+            <p><a href="mailto:support@example.com">support@example.com</a></p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Your Website Name. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
